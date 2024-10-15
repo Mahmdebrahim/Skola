@@ -1,0 +1,238 @@
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: 'Work Sans', sans-serif;
+  /*background-color: red;*/
+}
+:root{
+  --main-color-alt:rgb(191 158 125);
+  --main-color:rgb(140 172 99);
+  --second-color-section: rgb(191 158 125  / 20%);
+  --main-trans:0.5s; 
+  --main-padding-top: 50px;
+  --main-padding-bottom: 50px;
+  
+}
+html{
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+}
+ul,
+dl{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*background-color: orange;*/
+}
+  /*  small  */
+  @media (min-width: 768px) {
+    .container{
+      width: 750px;
+    }
+  }
+  /*  medium */
+  @media (min-width: 992px) {
+    .container{
+      width: 970px;
+    }
+  }
+  /*  large */
+  @media (min-width: 1200px) {
+    .container{
+      width: 1170px;
+    }
+  }
+/* end global rules */
+/* start navbar */
+.navbar{
+  position: relative;
+  /*background-color: #777;*/
+  padding: 5px;
+}
+.navbar .container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px){
+  .navbar .container{
+    justify-content: space-between;
+  }
+}
+.navbar .container .links{
+  display: flex;
+  align-items: center;
+  grid-gap: 15px;
+  padding: 20px;
+}
+.navbar .container .logo{
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;  
+}
+.navbar .container .logo div{
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+.navbar .container .logo i{
+  /*color: peru;*/
+  color: var(--main-color);
+}
+.navbar .container .links li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+.navbar .container .links li a{
+  color: black;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.5s ease-in-out 0s;
+}
+.navbar .container .links li a::before{
+ content: "";
+ position: absolute;
+ width: 0%;
+ height: 2px;
+ background-color: var(--main-color);
+ bottom: -5px;
+ transition-duration: 0.3s;
+ transition-delay: 0.3s;
+}
+.navbar .container .links li a:hover::before{
+  width: 100%;
+  color: var(--main-color);
+}
+.navbar .container .links li i{
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 12px;
+}
+
+/*.navbar .container .search{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+.navbar .container .search input{
+ position: relative;
+ padding: 10px 20px;
+ border-radius: 1px;
+ /*border-color: #ccc #ccc;
+ border-width: 1px; 
+}
+.navbar .container .search input::placeholder{ 
+  position: absolute;
+  left: 20px;
+}
+.navbar .container .search a i{
+  /*position: absolute;
+  right: 40px;
+  top: 3px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 20px;
+}*/ 
+.navbar .container .inputs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 15px;
+}
+.navbar .container .inputs i{
+  font-size: 20px;
+}
+.navbar .container .inputs .signin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+.navbar .container .inputs .signin a{
+  color: white;
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+
+}
+/*responsive*/
+.navbar .container .respo-menue{
+  display: none;
+}
+.navbar .bars{
+  color: black;
+  font-size: 22px;
+}
+@media (min-width: 768px){
+  .navbar .bars{
+   display: none;
+  }
+}
+@media(max-width: 768px){
+  .links, 
+  .inputs{
+    display: none;
+    }
+  }
+  .navbar .container .bars:hover + ul{ 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    /*background-color: var(--main-color);*/
+    background-color: rgb(27 67 102 / 0.900);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 5s;
+    width: 100%;
+    height: 0;
+  }
+  .navbar .container .bars{
+    color: white;
+  }
+  .navbar .container .bars:hover + ul {
+    width: 100%;
+    height: fit-content;
+  }
+  .navbar .container .respo-menue li{
+    padding: 20px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  .navbar .container .respo-menue li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: ease-in-out 0.3s;
+ }
+ .navbar .container .respo-menue li a:hover{
+   padding-left: 25px;
+ }
+}
+
+/* end navbar */
